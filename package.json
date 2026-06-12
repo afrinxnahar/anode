@@ -8,7 +8,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui": "pnpm --filter @repo/ui ui",
+    "ui": "pnpm --filter @anode/ui ui",
     "test:e2e": "playwright test",
     "prepare": "husky"
   },
@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@anode/eslint-config": "workspace:*",
+    "@anode/typescript-config": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "prettier": "catalog:",

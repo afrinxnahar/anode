@@ -32,7 +32,7 @@ This guide helps you extend the template. All commands run from the root unless 
 
 ### Adding Features
 - **Frontend**: Edit files in `apps/frontend`. Add shadcn/ui components: `pnpm ui add <component-name>`.
-- **Backend**: Add modules/services in `apps/backend/src`. Use `@repo/supabase` for database interactions.
+- **Backend**: Add modules/services in `apps/backend/src`. Use `@anode/supabase` for database interactions.
 - **Shared Code**: For new utilities, create packages with `pnpm turbo gen workspace --name <name> --type package`.
 - **Database**: Use Supabase for tables, auth, and realtime. See `packages/supabase/README.md` for setup, local running, migrations, and syncing.
 
@@ -51,7 +51,7 @@ This guide helps you extend the template. All commands run from the root unless 
 - Husky: Automatically runs lint and tests on commits (configured in `.husky/`).
 
 ### Deployment
-- Frontend: Deploy to Vercel (connect repo and set env vars).
+- Frontend: Deploy to Vercel (connect anode and set env vars).
 - Backend: Deploy to Railway or Render (set env vars for Supabase).
 - Database: Use Supabase dashboard for production; manage schemas via migrations.
 
@@ -64,3 +64,89 @@ For questions, open a GitHub issue.
 - Pull Supabase schema frequently (`pnpm run supabase:pull`) to avoid conflicts.
 - Use TypeScript strictly for safety; run `pnpm run build` before pushing.
 - Monitor CI failures; fix lint/test issues pre-commit via Husky.
+
+```
+anode
+├─ .editorconfig
+├─ .eslintrc.js
+├─ .husky
+│  └─ pre-commit
+├─ .npmrc
+├─ apps
+│  ├─ backend
+│  │  ├─ .eslintrc.js
+│  │  ├─ .prettierrc
+│  │  ├─ nest-cli.json
+│  │  ├─ package.json
+│  │  ├─ README.md
+│  │  ├─ src
+│  │  │  ├─ app.controller.spec.ts
+│  │  │  ├─ app.controller.ts
+│  │  │  ├─ app.module.ts
+│  │  │  ├─ app.service.ts
+│  │  │  ├─ main.ts
+│  │  │  └─ supabase
+│  │  │     ├─ supabase.module.ts
+│  │  │     ├─ supabase.service.spec.ts
+│  │  │     └─ supabase.service.ts
+│  │  ├─ test
+│  │  │  ├─ app.e2e-spec.ts
+│  │  │  └─ jest-e2e.json
+│  │  └─ tsconfig.json
+│  └─ frontend
+│     ├─ .eslintrc.js
+│     ├─ app
+│     │  ├─ layout.tsx
+│     │  └─ page.tsx
+│     ├─ jest.config.js
+│     ├─ lib
+│     │  └─ supabase.ts
+│     ├─ next.config.mjs
+│     ├─ package.json
+│     ├─ postcss.config.mjs
+│     ├─ README.md
+│     ├─ tailwind.config.ts
+│     └─ tsconfig.json
+├─ LICENSE
+├─ package.json
+├─ packages
+│  ├─ eslint-config
+│  │  ├─ library.js
+│  │  ├─ next.js
+│  │  ├─ package.json
+│  │  ├─ react-internal.js
+│  │  └─ README.md
+│  ├─ supabase
+│  │  ├─ config.toml
+│  │  ├─ index.ts
+│  │  ├─ package.json
+│  │  ├─ README.md
+│  │  └─ tsconfig.json
+│  ├─ typescript-config
+│  │  ├─ base.json
+│  │  ├─ nextjs.json
+│  │  ├─ package.json
+│  │  └─ react-library.json
+│  └─ ui
+│     ├─ .eslintrc.js
+│     ├─ components.json
+│     ├─ package.json
+│     ├─ postcss.config.mjs
+│     ├─ README.md
+│     ├─ src
+│     │  ├─ components
+│     │  │  └─ ui
+│     │  │     └─ button.tsx
+│     │  ├─ globals.css
+│     │  └─ lib
+│     │     └─ utils.ts
+│     ├─ tailwind.config.ts
+│     └─ tsconfig.json
+├─ playwright.config.ts
+├─ pnpm-lock.yaml
+├─ pnpm-workspace.yaml
+├─ prettier.config.mjs
+├─ README.md
+└─ turbo.json
+
+```

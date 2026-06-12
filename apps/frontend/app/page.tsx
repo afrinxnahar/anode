@@ -1,4 +1,4 @@
-import { Button } from "@repo/ui/components/ui/button";
+import { Button } from "@anode/ui/components/ui/button";
 
 export default function Page() {
   return (
