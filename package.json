@@ -9,12 +9,12 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "ui": "pnpm --filter @anode/ui ui",
+    "test": "turbo test",
     "test:e2e": "playwright test",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "eslint --fix",
-    "*.{ts,tsx}": "pnpm test -- --findRelatedTests"
+    "*.{js,ts,tsx}": "eslint --fix"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
